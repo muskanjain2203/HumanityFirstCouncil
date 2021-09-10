@@ -1,14 +1,14 @@
 package com.example.humanityfirstcouncil.model;
 
 public class CommonResponse {
-    public int errorCode;
+    public String errorCode;
     public String errorMessage;
 
     public CommonResponse(){
 
     }
 
-    public int getErrorCode() {
+    public String getErrorCode() {
         return errorCode;
     }
 

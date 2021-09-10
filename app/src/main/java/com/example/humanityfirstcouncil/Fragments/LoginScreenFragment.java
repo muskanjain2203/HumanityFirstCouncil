@@ -17,7 +17,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.humanityfirstcouncil.MainActivity;
 import com.example.humanityfirstcouncil.R;
 import com.example.humanityfirstcouncil.model.LoginRequest;
 import com.example.humanityfirstcouncil.model.LoginResponse;
@@ -31,6 +33,8 @@ import retrofit2.Response;
 
 public class LoginScreenFragment extends Fragment {
     public View view;
+
+    private Handler mHandler = new Handler(Looper.getMainLooper());
 
     void updateOnUiThread(Runnable runnable) {
         new Handler(Looper.getMainLooper()).post(runnable);
@@ -50,13 +54,7 @@ public class LoginScreenFragment extends Fragment {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //doTheServerCall();
-
-                DashboardFragment dashboardFragment = new DashboardFragment();
-               FragmentManager manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.mainLayout, dashboardFragment);
-                transaction.commit();
+                doTheServerCall();
             }
         });
 
@@ -78,7 +76,9 @@ public class LoginScreenFragment extends Fragment {
 
     EditText email;
     EditText password;
-    /*private void doTheServerCall() {
+
+
+    private void doTheServerCall() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -108,24 +108,41 @@ public class LoginScreenFragment extends Fragment {
                     LoginResponse loginResponse = response.body();
                     Log.e("login -- status",loginResponse.getErrorCode()+" "+loginResponse.getErrorMessage());
                     if (loginResponse != null) {
-                        if (loginResponse.getErrorCode() == 0) {
-
+                        if (loginResponse.getErrorCode().equalsIgnoreCase("0000")) {
 
                             SharedPreferences isLogin = getActivity().getSharedPreferences("userID", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = isLogin.edit();
                             editor.putInt("userID",loginResponse.getUserId());
                             editor.commit();
+                            mHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    FragmentManager manager = getActivity().getSupportFragmentManager();
+                                    Fragment das = new DashboardFragment();
+                                    FragmentTransaction transaction = manager.beginTransaction();
+                                    transaction.replace(R.id.mainLayout,das);
+                                    transaction.commit();
+                                }
+                            });
 
 
 
+                        }
+                            Toast.makeText(getActivity(),loginResponse.getErrorMessage(),Toast.LENGTH_SHORT);
                             Log.e("status",loginResponse.getErrorCode()+" "+loginResponse.getErrorMessage());
                        }
+                        Toast.makeText(getActivity(),loginResponse.getErrorMessage(),Toast.LENGTH_SHORT);
                     }
-                }else {
+                else {
                     Log.e("login -- status","response unsucessful");
                 }
             }
-        });
 
-    }*/
+        }).start();
+
+    }
+    protected MainActivity mActivity;
+    void launchFragment(Fragment fragment, boolean addBackStack) {
+        mActivity.launchFragment(fragment, addBackStack);
+    }
 }

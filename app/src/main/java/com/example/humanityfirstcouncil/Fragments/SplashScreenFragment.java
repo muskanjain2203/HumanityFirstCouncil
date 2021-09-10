@@ -35,6 +35,7 @@ public class SplashScreenFragment extends Fragment {
 
         return view;
 
+
     }
     public void load(Fragment fragment, boolean bool){
         FragmentManager manager = getActivity().getSupportFragmentManager();

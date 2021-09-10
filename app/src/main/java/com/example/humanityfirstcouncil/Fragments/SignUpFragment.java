@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.humanityfirstcouncil.MainActivity;
 import com.example.humanityfirstcouncil.R;
 
 import com.example.humanityfirstcouncil.model.RegistrationRequest;
@@ -69,14 +70,7 @@ public class SignUpFragment extends Fragment {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // doTheServerSignUpCall();
-
-               DashboardFragment dashboardFragment = new DashboardFragment();
-                manager = getActivity().getSupportFragmentManager();
-                FragmentTransaction transaction = manager.beginTransaction();
-                transaction.replace(R.id.mainLayout, dashboardFragment);
-                transaction.commit();
-
+               doTheServerSignUpCall();
             }
 
         });
@@ -136,6 +130,7 @@ public class SignUpFragment extends Fragment {
     EditText yourPassword;
     EditText yourMobile;
 
+    MainActivity mainActivity;
     private void doTheServerSignUpCall() {
         new Thread(new Runnable() {
             @Override
@@ -173,21 +168,16 @@ public class SignUpFragment extends Fragment {
                     RegistrationResponse registrationResponse = response.body();
                     Log.e("registration -- status",registrationResponse.getErrorCode()+" "+registrationResponse.getErrorMessage());
                     if (registrationResponse != null) {
-                        if (registrationResponse.getErrorCode() == 0) {
+                        if (registrationResponse.getErrorCode().equalsIgnoreCase("0000")) {
                             manager = getActivity().getSupportFragmentManager();
                             while(manager.getBackStackEntryCount() >=0){
                                 manager.popBackStack();
                             }
-
-                            LoginScreenFragment loginScreenFragment = new LoginScreenFragment();
-                            manager = getActivity().getSupportFragmentManager();
-                            FragmentTransaction transaction = manager.beginTransaction();
-                            transaction.replace(R.id.mainLayout, loginScreenFragment);
-                            transaction.commit();
-
+                            launchFragment(new LoginScreenFragment(),false);
                             Log.e("status",registrationResponse.getErrorCode()+" "+registrationResponse.getErrorMessage());
-
+                            Toast.makeText(getActivity(),registrationResponse.getErrorMessage(),Toast.LENGTH_SHORT);
                         }
+                        Toast.makeText(getActivity(),registrationResponse.getErrorMessage(),Toast.LENGTH_SHORT);
                     }
                 }else {
                     Log.e("register -- status","response unsucessful");
@@ -195,5 +185,11 @@ public class SignUpFragment extends Fragment {
             }
         });
 
+    }
+    MainActivity mActivity;
+
+
+    void launchFragment(Fragment fragment, boolean addBackStack) {
+        mActivity.launchFragment(fragment, addBackStack);
     }
 }

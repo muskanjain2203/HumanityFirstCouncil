@@ -82,7 +82,7 @@ public class DashboardFragment extends Fragment {
         });
         sustainableItemRecyclerView.setAdapter(recyclerViewSustainableAdapter);
 
-        doTheServerGoalsCall();
+//        doTheServerGoalsCall();
 
         return view;
     }
