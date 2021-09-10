@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/backgroundDashboardImageView"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/dashboard_background_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backgroundColourImageView"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:alpha="0.8"
+        android:background="@drawable/bg"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/humanityLogoImageView"
+        android:layout_width="95dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="@dimen/margin_18dp"
+        android:src="@drawable/humanity_first_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/weRiseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_60dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/we_rise"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/humanityLogoImageView"
+        app:layout_constraintTop_toBottomOf="@id/humanityLogoImageView" />
+
+    <TextView
+        android:id="@+id/byLiftingOthersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:background="@drawable/by_lifting_bg"
+        android:fontFamily="@font/roboto"
+        android:paddingStart="@dimen/margin_5dp"
+        android:paddingEnd="@dimen/margin_5dp"
+        android:text="@string/by_lifting_others"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_18sp"
+        app:layout_constraintStart_toStartOf="@id/humanityLogoImageView"
+        app:layout_constraintTop_toBottomOf="@id/humanityLogoImageView" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_0dp"
+        android:background="@color/white"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundDashboardImageView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sustainableDevelopmentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_47dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/sustainable_development_goals"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/text_size_18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sustainableDevelopmentRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10dp"
+                android:layout_marginEnd="@dimen/margin_10dp"
+                android:layout_marginTop="@dimen/margin_15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sustainableDevelopmentTextView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

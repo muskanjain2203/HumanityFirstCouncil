@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">HumanityFirstCouncil</string>
+    <string name="food_for_all">Food For All</string>
+    <string name="read_more">Read More</string>
+    <string name="we_rise">WE RISE</string>
+    <string name="by_lifting_others">BY LIFTING OTHERS</string>
+    <string name="sustainable_development_goals">Sustainable Development Goals</string>
+    <string name="welcome_to_humanity_first_council">Welcome to Humanity First Council</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_mobile">Your Mobile</string>
+    <string name="your_country">Your Country</string>
+    <string name="your_blood_group">Your Blood Group</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="submit">Submit</string>
+    <string name="your_password">Your Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">OR</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="don_t_have_a_account">Don’t have a account?</string>
+    <string name="register">Register</string>
+    <string name="register_to_continue">Register to continue</string>
+    <string name="back">Back</string>
+    <string name="in_terms_of_knowledge_young_people_need_to_develop_an_understanding_of_the_main_concepts_and_the_historical_development_of_human_rights_as_well_as_the_standards_demanded_by_the_main_instruments_and_mechanisms_for_human_rights_protection_this_means_knowing_about_one_s_own_rights_and_the_way_they_interact_with_other_people_as_well_as_knowing_how_to_defend_human_rights">In terms of knowledge, young people need to develop an understanding of the main concepts and the historical development of human rights, as well as the standards demanded by the main instruments and mechanisms for human rights protection. This means knowing about one\'s own rights and the way they interact with other people, as well as knowing how to defend human rights.</string>
+    <string name="field_cannot_be_empty">field cannot be empty</string>
+    <string name="emter_only_alphabetical_character">enter only alphabetical character</string>
+    <string name="Enter_valid_email">enter valid email</string>
+    <string name="data_is_valid">data is valid</string>
+    <string name="sorry_check_information">sorry check information</string>
+    <string name="please_fill_all_entries">please fill all entries</string>
+
+    <string-array name = "countryArray">
+        <item>India</item>
+        <item>France</item>
+        <item>Canada</item>
+        <item>US</item>
+    </string-array>
+
+    <string-array name = "bloodArray">
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+</resources>

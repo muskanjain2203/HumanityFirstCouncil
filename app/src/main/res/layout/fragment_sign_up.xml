@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_screen_bg_image">
+
+        <ImageView
+            android:id="@+id/humanityLogoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/margin_45dp"
+            android:src="@drawable/humanity_first_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/welcomeToHumanityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/welcome_to_humanity_first_council"
+            android:textColor="@color/brown"
+            android:textSize="@dimen/text_size_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/humanityLogoImageView" />
+
+        <TextView
+            android:id="@+id/signInToContinueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="@string/register_to_continue"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/welcomeToHumanityTextView" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/your_name"
+            android:inputType="text"
+            android:textColorHint="@color/grey"
+            android:paddingStart="@dimen/margin_10dp"
+            android:paddingTop="@dimen/margin_13dp"
+            android:paddingEnd="@dimen/margin_10dp"
+            android:paddingBottom="@dimen/margin_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signInToContinueTextView" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/your_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/margin_10dp"
+            android:paddingTop="@dimen/margin_13dp"
+            android:paddingEnd="@dimen/margin_10dp"
+            android:paddingBottom="@dimen/margin_10dp"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameEditText" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/your_password"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/margin_10dp"
+            android:paddingTop="@dimen/margin_13dp"
+            android:paddingEnd="@dimen/margin_10dp"
+            android:paddingBottom="@dimen/margin_10dp"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+
+
+
+        <EditText
+            android:id="@+id/mobileEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/your_mobile"
+            android:inputType="number"
+            android:maxLength="13"
+            android:paddingStart="@dimen/margin_10dp"
+            android:paddingTop="@dimen/margin_13dp"
+            android:paddingEnd="@dimen/margin_10dp"
+            android:paddingBottom="@dimen/margin_10dp"
+            android:textColorHint="@color/grey"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/countrySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mobileEditText" />
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/bloodGroupSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginTop="@dimen/margin_20dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/edit_text_bg"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countrySpinner" />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_34dp"
+            android:layout_marginBottom="@dimen/margin_30dp"
+            android:layout_marginEnd="@dimen/margin_34dp"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/submit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

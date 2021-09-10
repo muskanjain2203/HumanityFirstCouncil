@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/arrowImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_21dp"
+            android:layout_marginTop="@dimen/margin_21dp"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/backHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/back"
+            android:textColor="@color/greyish"
+            android:textSize="@dimen/text_size_14sp"
+            app:layout_constraintBottom_toBottomOf="@id/arrowImageView"
+            app:layout_constraintStart_toEndOf="@id/arrowImageView"
+            app:layout_constraintTop_toTopOf="@id/arrowImageView" />
+
+        <TextView
+            android:id="@+id/foodForAllTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_22dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Food For All"
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backHeadingTextView" />
+
+        <ImageView
+            android:id="@+id/foodDescriptionImageView"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/margin_22dp"
+            android:layout_marginEnd="@dimen/margin_22dp"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/food_image"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/foodForAllTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/foodDescriptionAllTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_22dp"
+            android:layout_marginEnd="@dimen/margin_22dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/in_terms_of_knowledge_young_people_need_to_develop_an_understanding_of_the_main_concepts_and_the_historical_development_of_human_rights_as_well_as_the_standards_demanded_by_the_main_instruments_and_mechanisms_for_human_rights_protection_this_means_knowing_about_one_s_own_rights_and_the_way_they_interact_with_other_people_as_well_as_knowing_how_to_defend_human_rights"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/foodDescriptionImageView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
